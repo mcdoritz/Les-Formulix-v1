@@ -10,8 +10,8 @@ import java.util.Set;
 public class User {
 
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
-    private int id;
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    private long id;
 
     @Column(nullable=false, unique=true)
     @Size(min=6, max=100)
@@ -30,6 +30,6 @@ public class User {
     private Boolean active;
     @Column(columnDefinition = "boolean default false")
     private Boolean admin;
-    @OneToMany(mappedBy="cart")
+    @OneToMany(mappedBy="user")
     private Set<Session> sessions;
 }

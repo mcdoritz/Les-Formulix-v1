@@ -12,7 +12,7 @@ public class Session {
     // Composite key : user_id + timestamp
     @Id
     @ManyToOne
-    @JoinColumn(name="user_id", nullable=false)
+    @JoinColumn(nullable=false)
     private User user;
     @Id
     @Column(nullable=false)

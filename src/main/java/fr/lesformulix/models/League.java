@@ -10,8 +10,8 @@ import jakarta.validation.constraints.Size;
 public class League {
 
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
-    private int id;
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    private long id;
 
     @Size(min=3, max=100)
     @Column(nullable=false, unique=true)
