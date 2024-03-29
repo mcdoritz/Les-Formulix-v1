@@ -22,7 +22,7 @@ public class Track {
 
     @ManyToOne
     @JoinColumn(nullable=false)
-    private Driver driver;
+    private Driver driver_lap_record;
 
     @ManyToOne
     @JoinColumn(nullable=false)

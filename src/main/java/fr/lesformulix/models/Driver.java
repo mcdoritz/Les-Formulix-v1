@@ -25,7 +25,21 @@ public class Driver {
     @Column(nullable=false, columnDefinition = "text")
     private String notes;
 
-    @OneToMany(mappedBy="driver")
+    private Date end_of_contract;
+
+    @OneToMany(mappedBy="driver_lap_record")
     private Set<Track> tracks;
+
+    @ManyToOne
+    @JoinColumn(nullable=false)
+    private Team team;
+
+    @ManyToOne
+    @JoinColumn(nullable=false)
+    private Location birthplace;
+
+    @ManyToOne
+    @JoinColumn(nullable=false)
+    private Country nationality;
 
 }

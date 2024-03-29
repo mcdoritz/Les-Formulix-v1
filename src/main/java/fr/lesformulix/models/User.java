@@ -32,4 +32,8 @@ public class User {
     private Boolean admin;
     @OneToMany(mappedBy="user")
     private Set<Session> sessions;
+
+    @OneToMany(mappedBy="owner")
+    private Set<League> leagues;
+
 }

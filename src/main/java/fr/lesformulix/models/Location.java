@@ -18,5 +18,7 @@ public class Location {
     @OneToMany(mappedBy="location")
     private Set<Track> tracks;
 
+    @OneToMany(mappedBy="birthplace")
+    private Set<Driver> drivers;
 
 }

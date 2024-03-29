@@ -5,6 +5,8 @@ import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.Size;
 
+import java.util.Set;
+
 @Entity
 @Table(name="leagues")
 public class League {
@@ -27,5 +29,9 @@ public class League {
     private int max_users;
     @Min(value = 1)
     private int users_count;
+
+    @ManyToOne
+    @JoinColumn(nullable=false)
+    private User owner;
 
 }

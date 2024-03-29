@@ -18,4 +18,7 @@ public class Country {
     @OneToMany(mappedBy="country")
     private Set<Location> locations;
 
+    @OneToMany(mappedBy="nationality")
+    private Set<Driver> drivers;
+
 }
