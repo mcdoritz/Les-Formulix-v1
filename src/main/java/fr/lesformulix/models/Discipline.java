@@ -6,35 +6,33 @@ import jakarta.validation.constraints.Size;
 import java.util.Set;
 
 @Entity
-@Table(name="continents")
-public class Continent {
+@Table(name = "disciplines")
+public class Discipline {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private byte id;
-
+    private long id;
     @Size(min = 3, max = 100)
     @Column(nullable=false)
     private String name;
 
-    @OneToMany(mappedBy="continent")
-    private Set<Country> countries;
+    @OneToMany(mappedBy="discipline")
+    private Set<League> leagues;
 
-    public Continent() {
-
+    public Discipline() {
     }
 
-    public Continent(byte id, String name, Set<Country> countries) {
+    public Discipline(long id, String name, Set<League> leagues) {
         this.id = id;
         this.name = name;
-        this.countries = countries;
+        this.leagues = leagues;
     }
 
-    public byte getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(byte id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -46,20 +44,20 @@ public class Continent {
         this.name = name;
     }
 
-    public Set<Country> getCountries() {
-        return countries;
+    public Set<League> getLeagues() {
+        return leagues;
     }
 
-    public void setCountries(Set<Country> countries) {
-        this.countries = countries;
+    public void setLeagues(Set<League> leagues) {
+        this.leagues = leagues;
     }
 
     @Override
     public String toString() {
-        return "Continent{" +
+        return "Discipline{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", countries=" + countries +
+                ", leagues=" + leagues +
                 '}';
     }
 }
