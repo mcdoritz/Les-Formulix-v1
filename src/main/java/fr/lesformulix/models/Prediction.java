@@ -3,11 +3,15 @@ package fr.lesformulix.models;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Size;
 
+import java.io.Serializable;
 import java.util.Set;
 
 @Entity
 @Table(name="predictions")
-public class Prediction {
+@IdClass(PredictionId.class)
+public class Prediction implements Serializable {
+
+    // Composite key
 
     @Id
     @ManyToOne

@@ -3,11 +3,13 @@ package fr.lesformulix.models;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Size;
 
+import java.io.Serializable;
 import java.sql.Timestamp;
 
 @Entity
 @Table(name="sessions")
-public class Session {
+@IdClass (SessionId.class)
+public class Session implements Serializable {
 
     // Composite key : user_id + timestamp
     @Id
