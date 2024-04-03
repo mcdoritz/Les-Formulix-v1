@@ -12,7 +12,7 @@ public class RootController {
 
     @GetMapping
     public String landing(Model model){
-        model.addAttribute("pageTitle", "Les Formulix");
+        model.addAttribute("pageTitle", "Les Zinzins");
 
         return "outside/landing";
     }

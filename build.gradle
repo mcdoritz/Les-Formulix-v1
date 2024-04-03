@@ -25,9 +25,14 @@ dependencies {
     runtimeOnly 'com.mysql:mysql-connector-j'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'org.springframework.security:spring-security-test'
+    compileOnly("org.springframework.boot:spring-boot-devtools")
 }
 
 test {
     useJUnitPlatform()
     include '**/*Test.class'
+}
+
+bootRun {
+    systemProperties = System.properties
 }

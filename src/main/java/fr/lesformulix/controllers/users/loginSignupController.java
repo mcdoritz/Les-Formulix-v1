@@ -1,4 +1,4 @@
-package fr.lesformulix.controllers;
+package fr.lesformulix.controllers.users;
 
 import fr.lesformulix.models.User;
 import org.springframework.stereotype.Controller;

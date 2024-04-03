@@ -14,6 +14,7 @@ public class Security {
         http
                 .authorizeHttpRequests(auth -> {
                     auth.requestMatchers( "/", "/login", "/signup").permitAll();
+                    auth.requestMatchers("/app").authenticated();
                     auth.anyRequest().authenticated();
                 })
                 .formLogin(
@@ -28,7 +29,10 @@ public class Security {
                         logout -> logout
                                 .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
                                 .permitAll()
-                );
+
+                )
+
+        ;
         return http.build();
     }
 
