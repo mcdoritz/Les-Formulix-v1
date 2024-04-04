@@ -18,3 +18,7 @@ Ne pas reprendre :
  - Modifier mon profil
  - Contact dev
  - Modifs à faire selon retours users
+
+
+### Build de tailwind :
+npx tailwindcss -i src/main/resources/static/input.css -o src/main/resources/static/output.css --watch
