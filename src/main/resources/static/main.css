@@ -1,0 +1,63 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--black);
+    color: #ffffff;
+    font-family: "Roboto", sans-serif;
+}
+
+/* ------------------------------------------------------------------------ */
+/* ------- https://wweb.dev/resources/blur-background-css-generator ------- */
+.background {
+    position: absolute;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: linear-gradient(to right, #15151e, #15151e);
+    display: flex;
+    flex-grow: 1;
+    z-index: -1;
+}
+
+.background div {
+    position: absolute;
+    border-radius: 100%;
+    height: 0;
+    filter: blur(240vw);
+    opacity: 0.4;
+}
+
+.background div:nth-child(1) {
+    background: linear-gradient(132deg, #c01c28 0.00%, #f66151 100.00%);
+    width: 34%;
+    padding-top: 34%;
+    left: 26%;
+    top: 25%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.background div:nth-child(2) {
+    background: linear-gradient(132deg, #1a5fb4 0.00%, #1c71d8 100.00%);
+    width: 40%;
+    padding-top: 40%;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.background div:nth-child(3) {
+    background: linear-gradient(132deg, #1FCFC3 0.00%, #77767b 100.00%);
+    width: 30%;
+    padding-top: 30%;
+    left: 80%;
+    top: 63%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+/* ------------------------------------------------------------------------ */
+/* ------------------------------------------------------------------------ */
