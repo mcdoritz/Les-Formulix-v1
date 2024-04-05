@@ -6,8 +6,73 @@ body {
     height: 100vh;
     background-color: var(--black);
     color: #ffffff;
-    font-family: "Roboto", sans-serif;
+    font-family: "Noto", sans-serif;
 }
+
+/* <uniquifier>: Use a unique and descriptive class name
+ <weight>: Use a value from 100 to 900 */
+
+.noto-sans-title-logo {
+    font-family: "Noto Sans", sans-serif;
+    font-size:8em;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+    font-variation-settings:
+            "wdth" 100;
+}
+
+.noto-sans-landing-button {
+    font-family: "Noto Sans", sans-serif;
+    font-size:2em;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: italic;
+    text-transform: uppercase;
+    font-variation-settings:
+            "wdth" 100;
+}
+
+/* ------------------------------------------------------------------------ */
+/* ------------------------------- LANDING -------------------------------- */
+
+.landing-button{
+    position:relative;
+    border-top: 4px solid rgba(239, 68, 68, 0.5);
+    border-bottom: 4px solid rgba(239, 68, 68, 0.5);
+    border-right: 4px solid rgb(239 68 68);
+    border-left: 4px solid rgb(239 68 68);
+
+    transition:
+            border-top 2s,
+            border-bottom 2s;
+}
+
+.landing-button::before {
+    content: ""; /* Obligatoire pour afficher le pseudo-élément */
+    position: absolute; /* Position absolue par rapport à la div parente */
+    top: -4px; /* Position au sommet de la div parente */
+    left:0;
+    width: 25%; /* Largeur de la bordure supérieure */
+    border-top: 4px solid rgb(239 68 68); /* Bordure supérieure */
+}
+
+.landing-button::after {
+    content: ""; /* Obligatoire pour afficher le pseudo-élément */
+    position: absolute; /* Position absolue par rapport à la div parente */
+    bottom: -4px; /* Position au sommet de la div parente */
+    right:0;
+    width: 25%; /* Largeur de la bordure supérieure */
+    border-top: 4px solid rgb(239 68 68); /* Bordure supérieure */
+}
+
+.landing-button:active{
+
+    border-top: 4px solid rgba(239, 68, 68, 1);
+    border-bottom: 4px solid rgba(239, 68, 68, 1);
+}
+
+/* ------------------------------------------------------------------------ */
 
 /* ------------------------------------------------------------------------ */
 /* ------- https://wweb.dev/resources/blur-background-css-generator ------- */
