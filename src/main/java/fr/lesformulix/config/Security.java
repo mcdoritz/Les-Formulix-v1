@@ -13,7 +13,7 @@ public class Security {
 
         http
                 .authorizeHttpRequests(auth -> {
-                    auth.requestMatchers( "/", "/login", "/signup", "/output.css", "/main.css").permitAll();
+                    auth.requestMatchers( "/", "/login", "/signup", "/css/*", "/js/*").permitAll();
                     auth.requestMatchers("/app").authenticated();
                     auth.anyRequest().authenticated();
                 })

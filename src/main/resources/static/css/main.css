@@ -1,3 +1,7 @@
+:root{
+    --black : "#2b2b2b";
+}
+
 html,
 body {
     margin: 0;
@@ -34,7 +38,7 @@ body {
 }
 
 /* ------------------------------------------------------------------------ */
-/* ------------------------------- LANDING -------------------------------- */
+/* ------------------------------- BUTTONS -------------------------------- */
 
 .landing-button{
     position:relative;
@@ -42,10 +46,7 @@ body {
     border-bottom: 4px solid rgba(239, 68, 68, 0.5);
     border-right: 4px solid rgb(239 68 68);
     border-left: 4px solid rgb(239 68 68);
-
-    transition:
-            border-top 2s,
-            border-bottom 2s;
+    transition:1s;
 }
 
 .landing-button::before {
@@ -64,12 +65,6 @@ body {
     right:0;
     width: 25%; /* Largeur de la bordure supérieure */
     border-top: 4px solid rgb(239 68 68); /* Bordure supérieure */
-}
-
-.landing-button:active{
-
-    border-top: 4px solid rgba(239, 68, 68, 1);
-    border-bottom: 4px solid rgba(239, 68, 68, 1);
 }
 
 /* ------------------------------------------------------------------------ */
