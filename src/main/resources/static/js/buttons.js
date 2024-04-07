@@ -8,9 +8,13 @@ buttons.forEach(function(button){
 })
 
 function animateButton(event){
+    console.log("button clicked");
     let button = event.target;
     button.classList.add('active');
+    button.classList.remove('inactive');
+
     setTimeout(function(){
+        button.classList.add('inactive');
         button.classList.remove('active');
-    }, 1000);
+    }, 500);
 }
