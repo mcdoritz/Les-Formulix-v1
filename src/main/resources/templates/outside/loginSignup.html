@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<!--<head th:insert = "~{outside/layout/head::head}"></head>-->
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="outside/layout/layout">
+
+<body class="h-dvh w-dvw">
+
+<div layout:fragment="page" class="h-full w-full flex flex-col items-center justify-center">
+    <div id="landing-card" class="w-11/12 h-1/2 flex flex-col justify-around">
+        <div class="border-t-8 border-l-8 border-r-8 border-red-500 w-full h-96 mb-8"></div>
+        <div class="border-20 border-red-500 w-full h-96 text-8xl flex mb-8 justify-center items-center noto-sans-title-logo text-red-500 ">Les Formulix
+
+        </div>
+        <div id="login-signup" class="border-b-8 border-l-8 border-r-8 border-red-500 w-full h-full py-8 flex flex-col justify-evenly items-center ">
+            <div id="login-button" class="p-0 w-4/5 h-3/5 max-h-40 flex items-center justify-center text-red-500
+            button landing-button noto-sans-landing-button inactive">
+                <p class="w-full h-full text-6xl">LOGIN</p>
+            </div>
+            <div class="w-full" th:insert = "~{outside/loginSignup/loginForm::loginForm}"></div>
+            <div class="w-full" th:insert = "~{outside/loginSignup/signupForm::signupForm}"></div>
+            <div id="signup-button" class="p-0 w-4/5 h-3/5 max-h-40 flex flex-col items-center justify-center text-red-500
+            button landing-button noto-sans-landing-button inactive">
+                <p class="w-full h-full text-6xl">SIGNUP</p>
+            </div>
+        </div>
+
+    </div>
+    <div class="min-h-40 flex flex-col items-center justify-center ">
+        <p id="login-back-link" class="mb-4 w-full text-red-500 text-4xl italic link "></p>
+        <a id="landing-back-link" class="mt-4 w-full text-red-500 text-4xl italic link" href="/" alt="entrer">back</a>
+    </div>
+
+    <div class="background">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <script src="/js/buttons.js"></script>
+    <script src="/js/loginSignup.js"></script>
+
+</div>
+
+</body>

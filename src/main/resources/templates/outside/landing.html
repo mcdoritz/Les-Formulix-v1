@@ -1,33 +1,31 @@
 <!DOCTYPE html>
-<head th:insert = "~{outside/layout/head::head}"></head>
+<!--<head th:insert = "~{outside/layout/head::head}"></head>-->
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="outside/layout/layout">
 <body class="h-dvh w-dvw">
 
-<div class="h-full w-full flex items-center justify-center">
-    <div id="landing-card" style="height: fit-content;" class="w-11/12 aspect-square flex flex-col justify-around">
-        <div class="border-t-8 border-l-8 border-r-8 border-red-500 w-full h-72"></div>
-        <div class="border-20 border-red-500 w-full h-60 text-8xl flex justify-center items-center noto-sans-title-logo text-red-500 ">Les Formulix
-
-        </div>
-        <div class="border-b-8 border-l-8 border-r-8 border-red-500 w-full h-72 flex justify-center items-center ">
-            <div class="p-0 w-4/5 h-3/5 flex items-center justify-center text-red-500
-            button landing-button noto-sans-landing-button inactive">
-                <a class="w-full h-full text-6xl" href="/login" alt="entrer">Entrer</a>
-
+    <div layout:fragment="page" class="h-full w-full flex items-center justify-center">
+        <div id="landing-card" style="height: fit-content;" class="w-11/12 aspect-square flex flex-col justify-around">
+            <div class="border-t-8 border-l-8 border-r-8 border-red-500 w-full h-72"></div>
+            <div class="border-20 border-red-500 w-full h-60 text-8xl flex justify-center items-center noto-sans-title-logo text-red-500 ">Les Formulix
 
             </div>
+            <div class="border-b-8 border-l-8 border-r-8 border-red-500 w-full h-72 flex justify-center items-center ">
+                <div class="p-0 w-4/5 h-3/5 flex items-center justify-center text-red-500
+                button landing-button noto-sans-landing-button inactive">
+                    <a class="w-full h-full text-6xl" href="/loginSignup" alt="entrer">Entrer</a>
+
+                </div>
+            </div>
+
         </div>
+
+        <div class="background">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <script src="/js/buttons.js"></script>
 
     </div>
 
-</div>
-
-
-
-<div class="background">
-    <div></div>
-    <div></div>
-    <div></div>
-</div>
-<script src="/js/buttons.js"></script>
 </body>
-<div th:insert = "~{outside/layout/foot::foot}"></div>

@@ -13,14 +13,14 @@ public class Security {
 
         http
                 .authorizeHttpRequests(auth -> {
-                    auth.requestMatchers( "/", "/login", "/signup", "/css/*", "/js/*").permitAll();
+                    auth.requestMatchers( "/", "/loginSignup", "/css/*", "/js/*").permitAll();
                     auth.requestMatchers("/app").authenticated();
                     auth.anyRequest().authenticated();
                 })
                 .formLogin(
                         form -> form
-                                .loginPage("/login")
-                                .loginProcessingUrl("/login")
+                                .loginPage("/loginSignup")
+                                .loginProcessingUrl("/loginSignup")
                                 .usernameParameter("username")
                                 .defaultSuccessUrl("/app", true)
                                 .permitAll()

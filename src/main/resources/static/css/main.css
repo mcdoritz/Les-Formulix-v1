@@ -44,7 +44,7 @@ body {
     position:relative;
 }
 
-.landing-button a, .link{
+.landing-button a, .landing-button p, .link{
     display: flex;
     justify-content: center;
     align-items:center;

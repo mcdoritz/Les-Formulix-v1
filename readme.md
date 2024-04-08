@@ -21,4 +21,10 @@ Ne pas reprendre :
 
 
 ### Build de tailwind :
-npx tailwindcss -i src/main/resources/static/input.css -o src/main/resources/static/output.css --watch
+npx tailwindcss -i src/main/resources/static/css/input.css -o src/main/resources/static/css/output.css --watch
+
+### Thymeleaf :
+Utilisation de Thymeleaf Layout Dialect
+
+### Validation de formulaire :
+REGEX email : ^[\w\.-]+@[a-zA-Z\d\.-]+\.[a-zA-Z]{2,}$
