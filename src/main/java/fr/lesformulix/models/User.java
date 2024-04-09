@@ -17,7 +17,7 @@ public class User {
     @Size(min=6, max=100)
     private String email;
     @Column(nullable=false)
-    @Size(min=6, max=30)
+    @Size(min=6)
     private String password;
     @Column(nullable=false, unique=true)
     @Size(min=2, max=50)
@@ -42,6 +42,15 @@ public class User {
     private Set<Notification> notifications;
 
     public User() {
+    }
+
+    /*
+    Constructeur pour l'inscription
+     */
+    public User(String email, String password, String username){
+        this.email = email;
+        this.password = password;
+        this.username = username;
     }
 
     public User(long id, String email, String password, String username, String firstname, String lastname, Boolean active, Boolean admin, Set<Session> sessions, Set<League> leagues, Set<Prediction> predictions, Set<Notification> notifications) {

@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static fr.lesformulix.utils.DebugUtil.pr;
+import static fr.lesformulix.utils.DebugUtil.prln;
 
 @Service
 public class UserService {
@@ -27,6 +28,7 @@ public class UserService {
         //Faire d'abord la vérification que username ou email existe
 
         if(repo.findByUsername(user.getUsername()) != null || repo.findByEmail(user.getEmail()) != null){
+
             if(repo.findByUsername(user.getUsername()) != null) {
                 bindingResult.addError(new FieldError("user", "username", "Nom d'utilisateur déjà pris"));
             }
