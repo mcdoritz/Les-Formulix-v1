@@ -17,15 +17,19 @@ public class UserLoginService implements UserDetailsService {
     private UserRepository ur;
 
     @Override
-    public UserDetails loadUserByUsername(String login) throws UsernameNotFoundException {
+    public UserDetails loadUserByUsername(String emailUsername) throws UsernameNotFoundException {
         User user;
-        if(login.contains("@")){
-            user = ur.findByEmail(login);
+        prln("Login utilisé : " + emailUsername);
+        if(emailUsername.contains("@")){
+            prln("L'utilisateur semble avoir utilisé un email");
+            user = ur.findByEmail(emailUsername);
         }else{
-            user = ur.findByUsername(login);
+            prln("L'utilisateur semble avoir utilisé un username");
+            user = ur.findByUsername(emailUsername);
         }
         if(user == null){
-            throw new UsernameNotFoundException(login);
+            prln("Utilisateur non trouvé");
+            throw new UsernameNotFoundException(emailUsername);
         }
 
         return new UserLogin(user);

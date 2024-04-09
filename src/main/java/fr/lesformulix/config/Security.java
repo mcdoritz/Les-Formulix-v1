@@ -38,7 +38,7 @@ public class Security {
 
         http
                 .authorizeHttpRequests(auth -> {
-                    auth.requestMatchers( "/", "/loginSignup", "/css/*", "/js/*").permitAll();
+                    auth.requestMatchers( "/", "/loginSignup", "/signup", "/css/*", "/js/*").permitAll();
                     auth.requestMatchers("/app").authenticated();
                     auth.anyRequest().authenticated();
                 })
@@ -46,7 +46,7 @@ public class Security {
                         form -> form
                                 .loginPage("/loginSignup")
                                 .loginProcessingUrl("/login")
-                                .usernameParameter("username")
+                                .usernameParameter("emailUsername")
                                 .defaultSuccessUrl("/app", true)
                                 .permitAll()
                 )

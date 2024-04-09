@@ -54,7 +54,7 @@ function showSignup(){
     loginForm.classList.add("hidden");
     signupForm.classList.remove("hidden");
     loginBackLink.innerHTML="Login instead";
-    loginEmail.required = false;
+    loginEmailUsername.required = false;
     loginPassword.required = false;
     signupEmail.required = true;
     signupUsername.required = true;
@@ -70,7 +70,7 @@ function showLogin(){
     loginForm.classList.remove("hidden");
     signupForm.classList.add("hidden");
     loginBackLink.innerHTML="Signup instead";
-    loginEmail.required = true;
+    loginEmailUsername.required = true;
     loginPassword.required = true;
     signupEmail.required = false;
     signupUsername.required = false;
@@ -88,7 +88,7 @@ const specialCharsUsername = "-_";
 const specialCharsPassword = "!@#$%^&*()-_=+`~";
 
 // 1 : LOGIN
-const loginEmail = document.getElementById("login-email");
+const loginEmailUsername = document.getElementById("login-email");
 const loginPassword = document.getElementById("login-password");
 
 loginForm.addEventListener("submit", (event) => {
@@ -97,20 +97,20 @@ loginForm.addEventListener("submit", (event) => {
 
     // On récupère les deux champs et on walid
 
-    console.log(loginEmail.value);
+    console.log(loginEmailUsername.value);
     console.log(loginPassword.value);
     console.log(loginPassword.value.length)
 
     // Login entré : email ou username ?
 
     if(loginPassword.value.length >= 6){
-        if(loginEmail.value.includes("@")){
+        if(loginEmailUsername.value.includes("@")){
 
-            if(regexEmail.test(loginEmail.value)){
+            if(regexEmail.test(loginEmailUsername.value)){
                 console.info("Formulaire avec email, VALIDE");
                 event.target.submit();
             }else{
-                if(loginEmail.value.length > 100){
+                if(loginEmailUsername.value.length > 100){
                     console.error("Formulaire avec email, INVALIDE : trop long");
                 }else{
                     console.error("Formulaire avec email, INVALIDE");
@@ -119,7 +119,7 @@ loginForm.addEventListener("submit", (event) => {
             }
 
         }else{
-            if(loginEmail.length >= 2){
+            if(loginEmailUsername.value.length >= 2){
                 console.info("Formulaire avec username, VALIDE");
                 event.target.submit();
             }else{

@@ -19,22 +19,28 @@ public class loginSignupController {
     private UserService us;
 
     @GetMapping("/loginSignup")
-    public String loginSignup(Model model){
+    public String loginSignup(User user, Model model){
+        prln("controller loginSignup");
+        model.addAttribute("user", user);
         model.addAttribute("pageTitle", "LOGIN / SIGNUP");
         return "outside/loginSignup";
     }
 
-    @PostMapping("/Signup")
+    @PostMapping("/signup")
     public String signup(@Validated User user, BindingResult bindingResult, Model model){
+        prln("controller signup");
         if(bindingResult.hasErrors()){
-            return "loginSignup";
+            prln("erreur controller signup");
+            return "outside/loginSignup";
         }
         if(us.add(user, bindingResult) != null){
+            prln("user added");
             model.addAttribute("new-user-username", user.getUsername());
         }else{
+            prln("user not added");
             model.addAttribute("error-msg", "L'utilisateur n'a pas été créé");
         }
-        return "/loginSignup";
+        return "outside/loginSignup";
     }
 
 }

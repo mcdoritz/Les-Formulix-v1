@@ -47,6 +47,7 @@ public class UserService {
 
             BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
             user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
+            prln(user.getPassword() + user.getPassword().length());
             repo.save(user);
         }
         return user;
