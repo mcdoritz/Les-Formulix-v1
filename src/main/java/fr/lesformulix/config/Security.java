@@ -1,6 +1,5 @@
 package fr.lesformulix.config;
 
-
 import fr.lesformulix.services.UserLoginService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -9,6 +8,8 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
+
+import static fr.lesformulix.utils.DebugUtil.prln;
 
 @Configuration
 public class Security {
@@ -38,7 +39,7 @@ public class Security {
 
         http
                 .authorizeHttpRequests(auth -> {
-                    auth.requestMatchers( "/", "/loginSignup", "/signup", "/css/*", "/js/*").permitAll();
+                    auth.requestMatchers( "/", "/loginSignup", "/signup", "/login", "/login-error", "/css/*", "/js/*").permitAll();
                     auth.requestMatchers("/app").authenticated();
                     auth.anyRequest().authenticated();
                 })
@@ -46,8 +47,10 @@ public class Security {
                         form -> form
                                 .loginPage("/loginSignup")
                                 .loginProcessingUrl("/login")
-                                .usernameParameter("emailUsername")
+                                .usernameParameter("username")
+                                .passwordParameter("password")
                                 .defaultSuccessUrl("/app", true)
+                                .failureUrl("/login-error")
                                 .permitAll()
                 )
                 .logout(
