@@ -1,5 +1,6 @@
 :root{
-    --black : "#2b2b2b";
+    --black : #2b2b2b;
+    --green-flag: rgb(74 222 128);
 }
 
 html,
@@ -11,6 +12,19 @@ body {
     background-color: var(--black);
     color: #ffffff;
     font-family: "Noto", sans-serif;
+}
+
+header{
+    height:9%;
+}
+
+.app-status-flag{
+    background-color: var(--green-flag);
+    height:3%;
+}
+
+footer{
+    height:7%;
 }
 
 /* <uniquifier>: Use a unique and descriptive class name

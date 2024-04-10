@@ -39,8 +39,8 @@ public class Security {
 
         http
                 .authorizeHttpRequests(auth -> {
-                    auth.requestMatchers( "/", "/loginSignup", "/signup", "/login", "/login-error", "/css/*", "/js/*").permitAll();
-                    auth.requestMatchers("/app").authenticated();
+                    auth.requestMatchers( "/", "/loginSignup", "/signup", "/login", "/app", "/login-error", "/css/*", "/js/*").permitAll();
+                    auth.requestMatchers("/appede").authenticated();
                     auth.anyRequest().authenticated();
                 })
                 .formLogin(
