@@ -9,19 +9,23 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link href="/css/output.css" rel="stylesheet">
     <link href="/css/main.css" rel="stylesheet">
-    <link href="/css/header.css" rel="stylesheet">
+    <link href="/css/app.css" rel="stylesheet">
+    <link href="/css/burger.css" rel="stylesheet">
+
 
 </head>
 <body class="h-dvh max-h-dvh flex flex-col">
     <header layout:fragment="header" class="bg-red-500">
         <nav role="navigation">
-            <label class="menu-burger">
-                <div class="b1"></div>
-                <div class="b2"></div>
-                <div class="b3"></div>
+            <input id="serve-the-burger" type="checkbox">
+            <label class="menu-burger" for="serve-the-burger">
+                <div class="top-bun"></div>
+                <div class="meat"></div>
+                <div class="bottom-bun"></div>
             </label>
-            <nav class="menu">
-                <a href="/bet" >Bet !</a>
+
+            <nav class="header-menu">
+                <a href="/bet">Bet !</a>
                 <a href="/league">League</a>
                 <a href="/schedule">Schedule</a>
                 <a href="/edit-profile">Edit my profile</a>
@@ -29,8 +33,9 @@
             </nav>
         </nav>
     </header>
-    <div class="app-status-flag">Green Flag</div>
+    <div th:insert="~{app/layout/appStatus::appStatus}" class="app-status-flag text-4xl font-bold italic text-center uppercase flex justify-center items-center "></div>
     <div layout:fragment="page" class="flex-1 overflow-auto"></div>
     <footer layout:fragment="footer" class="bg-red-500">Footer</footer>
+    <div th:insert="~{app/layout/background::background}"></div>
 </body>
 </html>

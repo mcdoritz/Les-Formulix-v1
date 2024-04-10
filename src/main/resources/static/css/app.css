@@ -1,0 +1,13 @@
+header{
+    height:9%;
+}
+
+.app-status-flag{
+    color: var(--black);
+    background-color: var(--green-flag);
+    height:3%;
+}
+
+footer{
+    height:7%;
+}
