@@ -34,8 +34,21 @@
         </nav>
     </header>
     <div th:insert="~{app/layout/appStatus::appStatus}" class="app-status-flag text-4xl font-bold italic text-center uppercase flex justify-center items-center "></div>
-    <div layout:fragment="page" class="flex-1 overflow-auto"></div>
-    <footer layout:fragment="footer" class="bg-red-500">Footer</footer>
+    <div layout:fragment="page"></div>
+    <footer layout:fragment="footer" class="bg-red-500">
+        <a href="#" class="scores">
+            <span class="font-bold italic uppercase">BACAF</span>
+        </a>
+        <div class="score border-2 border-stone-950">86</div>
+        <div class="ladder border-2 border-red-950">
+            <div class="ranking">
+                1
+                <div class="pos">
+                    st
+                </div>
+            </div>
+        </div>
+    </footer>
     <div th:insert="~{app/layout/background::background}"></div>
 </body>
 </html>

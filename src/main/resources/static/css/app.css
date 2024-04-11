@@ -22,29 +22,154 @@ header{
     height:25%;
 }
 
-#news{
+section{
     display:grid;
-    grid-template-rows: 8rem repeat(3, .25fr);
 }
 
-#news div:first-child{
+section:last-child{
+    padding-bottom: 1rem;
+}
+
+#news{
+    grid-template-rows: 8rem repeat(3, .30fr);
+}
+
+#last-results, #next-gp{
+    grid-template-rows: 8rem;
+}
+
+.dashboard-section-title{
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
+    font-size:6rem;
 }
 
-#news h2{
-    font-size:6rem;
+article{
+    padding:0 .5rem;
+    margin:.2rem .5rem;
+    border-bottom:2px solid rgba(255,255,255,0.5);
+    border-left:2px solid rgba(255,255,255,0.5);
+    border-bottom-left-radius: 1.5rem;
+    transition:.25s;
+}
+
+article:active{
+    background-color: rgba(255,255,255,0.5);
 }
 
 #news article{
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     font-size:2rem;
 }
 
+#news article a:last-child{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding:0;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+#news article a{
+    text-align: justify;
+    padding-right:1rem;
+    width:100%;
+}
+
+#next-gp article, #last-results article{
+    position:relative;
+}
+
+.dashboard-race-title, .dashboard-league-title{
+    text-align: center;
+}
+
+.dashboard-race-title{
+    font-size:4rem;
+}
+
+.dashboard-league-title{
+    font-size:2rem;
+}
+
+.dashboard-race-flag{
+    display: inline-block;
+    height:1em;
+}
+
+.sport{
+    position:absolute;
+    font-size:4rem;
+    bottom:0;
+    right:0;
+    padding-right:.5rem;
+    text-align: right;
+    text-transform: uppercase;
+    font-style: italic;
+    font-weight: bolder;
+}
+
 footer{
+    position:relative;
     height:7%;
+}
+
+footer .scores{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    height: 100%;
+    padding: 0 1em;
+}
+
+.scores span{
+    display: block;
+    height:100%;
+    font-size: 12em;
+    line-height: 0.7;
+    letter-spacing: .1em;
+    opacity: .25;
+}
+
+footer .score, footer .ladder{
+    height:70%;
+    aspect-ratio: 1/1;
+    position:absolute;
+    bottom:10%;
+    font-size: 3em;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3em;
+    pointer-events: none;
+}
+
+footer .score{
+    border-radius: 9999px;
+    left:30%;
+}
+
+footer .ladder{
+    right:30%;
+}
+
+footer .ranking{
+    display: flex;
+    align-items: flex-start;
+    position: relative;
+}
+
+footer .pos{
+    font-size: .5em;
+    position: absolute;
+    padding-left: 1em;
+    top: 0;
+    left: 0;
 }

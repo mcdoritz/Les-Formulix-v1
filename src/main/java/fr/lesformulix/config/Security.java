@@ -39,7 +39,7 @@ public class Security {
 
         http
                 .authorizeHttpRequests(auth -> {
-                    auth.requestMatchers( "/", "/loginSignup", "/signup", "/login", "/app", "/login-error", "/css/*", "/js/*").permitAll();
+                    auth.requestMatchers( "/", "/loginSignup", "/signup", "/login", "/app", "/login-error", "/img/*", "/css/*", "/js/*").permitAll();
                     auth.requestMatchers("/appede").authenticated();
                     auth.anyRequest().authenticated();
                 })
