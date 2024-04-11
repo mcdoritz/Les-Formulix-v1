@@ -14,6 +14,6 @@ public class App {
         prln("Controller app");
         model.addAttribute("pageTitle", "Les Formulix");
 
-        return "app/landing";
+        return "app/dashboard";
     }
 }

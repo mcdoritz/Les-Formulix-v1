@@ -31,19 +31,18 @@ header nav{
 }
 
 .header-menu{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
     position: absolute;
     top:100%;
     z-index:100;
     width: 100%;
     background-color: #02173F;
-    margin: 0;
-    display: grid;
-    grid-template-rows: 1fr repeat(5, 0.5fr);
-    grid-row-gap: 25px;
     padding: 0;
     list-style: none;
     clear: both;
-    text-align: center;
+    text-align: right;
     height: 0px;
     overflow: hidden;
     transition: all 0.3s ease-in-out;
@@ -51,19 +50,10 @@ header nav{
 
 .header-menu a{
     width:100%;
-    margin:0;
-    padding:2rem 0;
+    margin:auto;
+    padding: 0 2rem 0 0;
     font: 700 7rem "Noto", sans-serif;
 }
-
-.header-menu a:first-child{
-    margin-top:2rem;
-}
-
-.header-menu a:last-child{
-    margin-bottom: 2rem;
-}
-
 
 #serve-the-burger:checked ~ .header-menu {
     height: calc(100vh/1.6);
@@ -86,7 +76,6 @@ header nav{
 #serve-the-burger:checked + .menu-burger .bottom-bun {
     transform: scale(0);
 }
-
 
 
 /* --------------------------------------- */
