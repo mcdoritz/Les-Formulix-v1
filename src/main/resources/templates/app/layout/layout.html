@@ -11,10 +11,9 @@
     <link href="/css/main.css" rel="stylesheet">
     <link href="/css/app.css" rel="stylesheet">
     <link href="/css/burger.css" rel="stylesheet">
-
-
 </head>
-<body class="h-dvh max-h-dvh flex flex-col">
+
+<body class="h-dvh max-h-dvh flex flex-col overflow-hidden">
     <header layout:fragment="header" class="bg-red-500">
         <nav role="navigation">
             <input id="serve-the-burger" type="checkbox">
@@ -23,7 +22,6 @@
                 <div class="meat"></div>
                 <div class="bottom-bun"></div>
             </label>
-
             <nav class="header-menu">
                 <a href="/bet">Bet !</a>
                 <a href="/league">League</a>
@@ -35,20 +33,19 @@
     </header>
     <div th:insert="~{app/layout/appStatus::appStatus}" class="app-status-flag text-4xl font-bold italic text-center uppercase flex justify-center items-center "></div>
     <div layout:fragment="page"></div>
-    <footer layout:fragment="footer" class="bg-red-500">
+    <footer layout:fragment="footer"id="footer" class="bg-red-500">
         <a href="#" class="scores">
-            <span class="font-bold italic uppercase">BACAF</span>
+            <span id="footer-league-name" class="font-bold uppercase adaptive-text">BACAF</span>
         </a>
-        <div class="score border-2 border-stone-950">86</div>
-        <div class="ladder border-2 border-red-950">
-            <div class="ranking">
-                1
-                <div class="pos">
-                    st
-                </div>
-            </div>
+        <div class="score">
+            <span class="adaptive-score">2658</span>
+        </div>
+        <div class="ladder">
+            <span class="adaptive-score">156</span>
+            <div class="pos">st</div>
         </div>
     </footer>
     <div th:insert="~{app/layout/background::background}"></div>
+<script src="/js/app/adaptiveText.js"></script>
 </body>
 </html>

@@ -44,13 +44,14 @@ section:last-child{
     align-items: center;
     text-align: center;
     font-size:6rem;
+    background-color: var(--white25);
 }
 
 article{
     padding:0 .5rem;
     margin:.2rem .5rem;
-    border-bottom:2px solid rgba(255,255,255,0.5);
-    border-left:2px solid rgba(255,255,255,0.5);
+    border-bottom:2px solid var(--white50);
+    border-left:2px solid var(--white50);
     border-bottom-left-radius: 1.5rem;
     transition:.25s;
 }
@@ -130,40 +131,51 @@ footer .scores{
 }
 
 .scores span{
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
     height:100%;
-    font-size: 12em;
     line-height: 0.7;
     letter-spacing: .1em;
-    opacity: .25;
+    opacity: .10;
+    white-space: break-spaces;
 }
 
 footer .score, footer .ladder{
-    height:70%;
+    color:var(--black);
+    height:90%;
     aspect-ratio: 1/1;
+    border:2px solid var(--black);
     position:absolute;
-    bottom:10%;
+    transform: translate(0, 50%);
+    bottom:50%;
     font-size: 3em;
     display:flex;
     justify-content: center;
     align-items: center;
-    font-size: 3em;
+    font-size: 4em;
     pointer-events: none;
+}
+
+footer .ladder{
+    padding-right:.5em;
 }
 
 footer .score{
     border-radius: 9999px;
     left:30%;
+    font-weight: 700;
 }
 
 footer .ladder{
     right:30%;
+    font-weight: 700;
+    font-style:italic;
 }
 
-footer .ranking{
-    display: flex;
-    align-items: flex-start;
-    position: relative;
+footer .adaptive-score{
+    position:absolute;
 }
 
 footer .pos{
@@ -171,5 +183,5 @@ footer .pos{
     position: absolute;
     padding-left: 1em;
     top: 0;
-    left: 0;
+    right: .2em;
 }

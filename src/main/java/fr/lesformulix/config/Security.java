@@ -30,7 +30,6 @@ public class Security {
         DaoAuthenticationProvider authProvider = new DaoAuthenticationProvider();
         authProvider.setUserDetailsService(userDetailsService());
         authProvider.setPasswordEncoder(passwordEncoder());
-
         return authProvider;
     }
 
@@ -39,7 +38,7 @@ public class Security {
 
         http
                 .authorizeHttpRequests(auth -> {
-                    auth.requestMatchers( "/", "/loginSignup", "/signup", "/login", "/app", "/login-error", "/img/*", "/css/*", "/js/*").permitAll();
+                    auth.requestMatchers( "/", "/loginSignup", "/signup", "/login", "/app", "/login-error", "/img/*", "/css/*", "/js/*", "/js/app/*").permitAll();
                     auth.requestMatchers("/appede").authenticated();
                     auth.anyRequest().authenticated();
                 })
