@@ -4,12 +4,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-public class Predictions {
+public class LeagueController {
 
-    @GetMapping("/predict")
+    @GetMapping("/league")
     public String predictions() {
 
-        return "predict";
+        return "app/league";
     }
 
 }
+

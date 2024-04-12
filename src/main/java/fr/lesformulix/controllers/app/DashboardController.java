@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import static fr.lesformulix.utils.DebugUtil.prln;
 
 @Controller
-public class App {
+public class DashboardController {
 
     @GetMapping("/app")
     public String landing(Model model){

@@ -38,22 +38,39 @@ section:last-child{
     grid-template-rows: 8rem;
 }
 
-.dashboard-section-title{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.section-title{
     text-align: center;
+    line-height: 1.25;
     font-size:6rem;
     background-color: var(--white25);
 }
 
-article{
+.section-subtitle{
+    font-size: 2em;
+    line-height: 2;
+    text-align:center;
+}
+
+article, section .first-row{
     padding:0 .5rem;
     margin:.2rem .5rem;
     border-bottom:2px solid var(--white50);
     border-left:2px solid var(--white50);
     border-bottom-left-radius: 1.5rem;
     transition:.25s;
+}
+
+section .first-row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size:2rem;
+}
+
+.first-row div{
+    display: flex;
+    justify-content: center;
+    text-align: center;
 }
 
 article:active{
@@ -116,6 +133,35 @@ article:active{
     font-weight: bolder;
 }
 
+#select-league{
+    height:auto;
+    padding-top:3em;
+}
+
+#select-league article{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size:2rem;
+    min-height:5em;
+}
+
+.days-to-next-race{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width:33%;
+    height: 100%;
+}
+
+.days-to-next-race .light{
+    border-radius:9999px;
+    aspect-ratio: 1/1;
+    height:33%;
+}
+
+
+/* FOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOTER */
 footer{
     position:relative;
     height:7%;
