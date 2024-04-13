@@ -131,15 +131,14 @@ public class League {
     @Override
     public String toString() {
         return "League{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", acronym='" + acronym + '\'' +
-                ", active=" + active +
-                ", max_users=" + max_users +
-                ", users_count=" + users_count +
-                ", owner=" + owner +
-                ", predictions=" + predictions +
-                ", discipline=" + discipline +
+                "id=" + getId() +
+                ", name='" + getName() + '\'' +
+                ", acronym='" + getAcronym() + '\'' +
+                ", active=" + getActive() +
+                ", max_users=" + getMax_users() +
+                ", users_count=" + getUsers_count() +
+                ", owner=" + getOwner().getUsername() +
+                ", discipline=" + getDiscipline().getName() +
                 '}';
     }
 }

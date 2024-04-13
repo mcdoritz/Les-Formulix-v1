@@ -16,6 +16,37 @@ body {
     overflow:hidden;
 }
 
+table{
+    border-collapse: separate;
+    border:2px solid var(--white50);
+    border-top-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    margin-left:1em;
+    margin-right:1em;
+}
+
+td, th{
+    display: flex;
+    align-items: center;
+    padding-left:.5em;
+    padding-right:.5em;
+}
+
+td{
+    font-size: 1.75em;
+    height:3em;
+    border-top:2px solid var(--white50);
+}
+
+th{
+    font-size: 2.5em;
+    height:4em;
+}
+
+tr{
+
+}
+
 /* <uniquifier>: Use a unique and descriptive class name
  <weight>: Use a value from 100 to 900 */
 

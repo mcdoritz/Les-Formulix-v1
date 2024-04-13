@@ -85,6 +85,8 @@ public class Prediction implements Serializable {
         this.scores = scores;
     }
 
+
+
     @Override
     public String toString() {
         return "Prediction{" +

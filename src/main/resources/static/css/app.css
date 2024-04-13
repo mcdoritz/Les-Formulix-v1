@@ -49,6 +49,7 @@ section:last-child{
     font-size: 2em;
     line-height: 2;
     text-align:center;
+    margin-bottom: 2em;
 }
 
 article, section .first-row{
@@ -121,21 +122,13 @@ article:active{
     height:1em;
 }
 
-.sport{
-    position:absolute;
-    font-size:4rem;
-    bottom:0;
-    right:0;
-    padding-right:.5rem;
-    text-align: right;
-    text-transform: uppercase;
-    font-style: italic;
-    font-weight: bolder;
+.leagues-list tr{
+    display: grid;
+    grid-template-columns: 1fr 1.5fr 1.15fr;
 }
 
 #select-league{
     height:auto;
-    padding-top:3em;
 }
 
 #select-league article{
