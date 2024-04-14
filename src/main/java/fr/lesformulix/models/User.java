@@ -48,24 +48,24 @@ public class User {
     Constructeur pour l'inscription
      */
     public User(String email, String password, String username){
-        this.email = email;
-        this.password = password;
-        this.username = username;
+        setEmail(email);
+        setPassword(password);
+        setUsername(username);
     }
 
     public User(long id, String email, String password, String username, String firstname, String lastname, Boolean active, Boolean admin, Set<Session> sessions, Set<League> leagues, Set<Prediction> predictions, Set<Notification> notifications) {
-        this.id = id;
-        this.email = email;
-        this.password = password;
-        this.username = username;
-        this.firstname = firstname;
-        this.lastname = lastname;
-        this.active = active;
-        this.admin = admin;
-        this.sessions = sessions;
-        this.leagues = leagues;
-        this.predictions = predictions;
-        this.notifications = notifications;
+        setId(id);
+        setEmail(email);
+        setPassword(password);
+        setUsername(username);
+        setFirstname(firstname);
+        setLastname(lastname);
+        setActive(active);
+        setAdmin(admin);
+        setSessions(sessions);
+        setLeagues(leagues);
+        setPredictions(predictions);
+        setNotifications(notifications);
     }
 
     public long getId() {
