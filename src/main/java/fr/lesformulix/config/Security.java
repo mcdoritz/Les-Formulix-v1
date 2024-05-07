@@ -38,19 +38,19 @@ public class Security {
 
         http
                 .authorizeHttpRequests(auth -> {
-                    //auth.requestMatchers( "/", "/loginSignup", "/signup", "/login", "/app", "/login-error", "/img/*", "/css/*", "/js/*", "/js/app/*").permitAll();
+                    auth.requestMatchers( "/", "/signup", "/login", "/app", "/img/*", "/css/*", "/js/*", "/js/app/*").permitAll();
                     //auth.requestMatchers("/appede").authenticated();
-                    auth.requestMatchers("/**").permitAll();
+                    //auth.requestMatchers("/**").permitAll();
                     auth.anyRequest().authenticated();
                 })
                 .formLogin(
                         form -> form
-                                .loginPage("/loginSignup")
+                                .loginPage("/login")
                                 .loginProcessingUrl("/login")
                                 .usernameParameter("username")
                                 .passwordParameter("password")
                                 .defaultSuccessUrl("/app", true)
-                                .failureUrl("/login-error")
+                                .failureUrl("/login")
                                 .permitAll()
                 )
                 .logout(

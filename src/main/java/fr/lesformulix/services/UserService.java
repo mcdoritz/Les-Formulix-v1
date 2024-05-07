@@ -11,7 +11,6 @@ import org.springframework.validation.FieldError;
 import java.util.ArrayList;
 import java.util.List;
 
-import static fr.lesformulix.utils.DebugUtil.pr;
 import static fr.lesformulix.utils.DebugUtil.prln;
 
 @Service

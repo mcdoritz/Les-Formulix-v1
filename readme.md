@@ -1,12 +1,12 @@
 ## Les Formulix V1.0
 
 **Reprendre les fonctionnalités et specs du PoC :**
- - Système de register/login
+ - Système de register/login ✅
  - Intégration des pilotes et circuits de la saison
  - Métier : gestion des pronos et résultats
- - Gestion session
+ - Gestion session ✅
 Ne pas reprendre :
- - Blog (serts à rien pour l'instant)
+ - Blog (sert à rien pour l'instant)
 
 **V1.0 :**
  - Passer l'app sur Spring Boot + Thymeleaf
@@ -28,3 +28,7 @@ Utilisation de Thymeleaf Layout Dialect
 
 ### Validation de formulaire :
 REGEX email : ^[\w\.-]+@[a-zA-Z\d\.-]+\.[a-zA-Z]{2,}$
+
+## Avancées au 7/5/24:
+
+➕ Login OK
