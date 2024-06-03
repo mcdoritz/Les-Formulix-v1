@@ -25,6 +25,7 @@ public class loginController {
     public String login(Model model){
         prln("Controller login");
         model.addAttribute("pageTitle", "LOGIN");
+        model.addAttribute("user", new User());
         return "outside/login";
     }
 
