@@ -24,5 +24,5 @@ phases:
       - echo Build completed on `date`
 artifacts:
   files:
-    - build/libs/*.war
+    - '**/*'
   discard-paths: yes
