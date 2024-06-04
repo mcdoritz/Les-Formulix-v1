@@ -32,3 +32,7 @@ REGEX email : ^[\w\.-]+@[a-zA-Z\d\.-]+\.[a-zA-Z]{2,}$
 ## Avancées au 7/5/24:
 
 ➕ Login OK
+
+
+## Avancées au 4/6/24:
+Tentative de CI/CD avec Github Actions et AWS CodePipeline
