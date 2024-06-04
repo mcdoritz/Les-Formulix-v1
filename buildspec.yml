@@ -1,0 +1,28 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      java: corretto17
+    commands:
+      - echo Entered the install phase...
+      - echo Check Java version...
+      - java -version
+  pre_build:
+    commands:
+      - echo Entered the pre_build phase...
+      - echo Check Gradle version...
+      - gradle -v
+  build:
+    commands:
+      - echo Entered the build phase...
+      - echo Build started on `date`
+      - gradle clean build
+  post_build:
+    commands:
+      - echo Entered the post_build phase...
+      - echo Build completed on `date`
+artifacts:
+  files:
+    - build/libs/*.jar
+  discard-paths: yes

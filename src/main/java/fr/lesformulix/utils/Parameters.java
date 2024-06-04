@@ -5,7 +5,7 @@ public class Parameters {
     /*
      * Cette propriété active ou désactive la méthode PRLN, ce qui active ou non les messages dans la console.
      */
-    public static Boolean deploy = false;
+    public static Boolean deploy = true;
 
     /*
      * Paramètres de la BDD
@@ -16,7 +16,7 @@ public class Parameters {
     public static String url = "jdbc:mysql://localhost:3306/"+ name +"?useUnicode=yes&characterEncoding=UTF-8";
 
     public static String admin = !deploy ? "root" : "mcdoritz";
-    public static String adminpw = !deploy ? "" : "corvette$72";
+    public static String adminpw = !deploy ? "" : "Corvette$72#19";
 
     /*
      * Couleurs de console :
