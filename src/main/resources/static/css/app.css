@@ -124,7 +124,7 @@ article:active{
 
 .leagues-list tr{
     display: grid;
-    grid-template-columns: 1fr 1.5fr 1.15fr;
+    grid-template-columns: 1.5fr 1fr 1.15fr;
 }
 
 #select-league{

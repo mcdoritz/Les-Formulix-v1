@@ -14,7 +14,7 @@ public interface LeagueRepository extends JpaRepository<League, Integer> {
             "JOIN LeagueUser league_id " +
             "JOIN LeagueUser user_id " +
             "WHERE user_id = :userId")*/
-    @Query("SELECT leagueUser.league FROM LeagueUser leagueUser WHERE leagueUser.user.id = :userId")
+    @Query("SELECT DISTINCT leagueUser.league FROM LeagueUser leagueUser WHERE leagueUser.user.id = :userId")
     List<League> findAllLeaguesByUser(@Param("userId") int userId);
 
 

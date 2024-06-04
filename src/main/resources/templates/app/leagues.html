@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="app/layout/layout">
+
+<main layout:fragment="page" class="main-content flex-1 overflow-auto">
+    <section id = "select-league" class="app-component">
+        <h1 class="section-title">Leagues</h1>
+        <p class="section-subtitle">Where you are IN IN IN IN IN IN IN</p>
+        <table class="leagues-list">
+            <tr>
+                <th class="text-left">LEAGUE</th>
+                <th class="font-bold uppercase text-left">[SPORT]</th>
+                <th class="text-left">D-DAY IN</th>
+            </tr>
+            <tr th:each="league : ${leaguesOfUser}" th:attr="onclick='window.location.href=\'league/' + ${league.id} + '\''">
+                <td th:text="${league.name}"></td>
+                <td th:text="'[' + ${league.disciplines.size() > 1 ? 'MULTI' : league.disciplines[0].name} + ']'" class="font-bold uppercase"></td>
+                <td class="">
+                    <div class="light bg-red-500 col-span-1"></div>
+                    <div class="light bg-red-500"></div>
+                    <div class="light bg-red-500"></div>
+                    <div class="light bg-red-500"></div>
+                    <div class="light bg-slate-700"></div>
+                </td>
+            </tr>
+        </table>
+
+    </section>
+    <section th:if="${league != null}" id="leagueInfoContainer">
+        <div th:text="${league.name}"></div>
+    </section>
+    <script src="js/app/league/jQueryLeague.js"></script>
+</main>

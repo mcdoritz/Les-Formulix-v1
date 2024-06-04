@@ -7,7 +7,7 @@ import java.util.Set;
 
 @Entity()
 @Table(name="users")
-public class User {
+public class User extends Person {
 
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
@@ -22,10 +22,6 @@ public class User {
     @Column(nullable=false, unique=true)
     @Size(min=2, max=50)
     private String username;
-    @Size(min=2, max=50)
-    private String firstname;
-    @Size(min=2, max=50)
-    private String lastname;
     @Column(columnDefinition = "boolean default true")
     private Boolean active;
     @Column(columnDefinition = "boolean default false")
@@ -54,12 +50,11 @@ public class User {
     }
 
     public User(long id, String email, String password, String username, String firstname, String lastname, Boolean active, Boolean admin, Set<Session> sessions, Set<League> leagues, Set<Prediction> predictions, Set<Notification> notifications) {
+        super(firstname, lastname);
         setId(id);
         setEmail(email);
         setPassword(password);
         setUsername(username);
-        setFirstname(firstname);
-        setLastname(lastname);
         setActive(active);
         setAdmin(admin);
         setSessions(sessions);
@@ -98,22 +93,6 @@ public class User {
 
     public void setUsername(String username) {
         this.username = username;
-    }
-
-    public String getFirstname() {
-        return firstname;
-    }
-
-    public void setFirstname(String firstname) {
-        this.firstname = firstname;
-    }
-
-    public String getLastname() {
-        return lastname;
-    }
-
-    public void setLastname(String lastname) {
-        this.lastname = lastname;
     }
 
     public Boolean getActive() {
@@ -171,8 +150,8 @@ public class User {
                 ", email='" + email + '\'' +
                 ", password='" + password + '\'' +
                 ", username='" + username + '\'' +
-                ", firstname='" + firstname + '\'' +
-                ", lastname='" + lastname + '\'' +
+                ", firstname='" + super.getFirstname() + '\'' +
+                ", lastname='" + super.getLastname() + '\'' +
                 ", active=" + active +
                 ", admin=" + admin +
                 ", sessions=" + sessions +

@@ -27,8 +27,6 @@ public class League {
     @Max(value = 1000)
     @Min(value = 1)
     private int max_users;
-    @Min(value = 1)
-    private int users_count;
 
     @ManyToOne
     @JoinColumn(nullable=false)
@@ -37,23 +35,26 @@ public class League {
     @OneToMany(mappedBy="league")
     private Set<Prediction> predictions;
 
-    @ManyToOne
-    @JoinColumn(nullable=false)
-    private Discipline discipline;
+    //Fetch permet ici de charger les disciplines en même temps que la ligue
+    @ManyToMany(fetch = FetchType.EAGER)
+    private Set<Discipline> disciplines;
+
+    @Transient
+    private int users_count;
 
     public League(){
     }
 
-    public League(long id, String name, String acronym, Boolean active, int max_users, int users_count, User owner, Set<Prediction> predictions, Discipline discipline) {
-        this.id = id;
-        this.name = name;
-        this.acronym = acronym;
-        this.active = active;
-        this.max_users = max_users;
-        this.users_count = users_count;
-        this.owner = owner;
-        this.predictions = predictions;
-        this.discipline = discipline;
+    public League(long id, String name, String acronym, Boolean active, int max_users, int users_count, User owner, Set<Prediction> predictions, Set<Discipline> disciplines) {
+        setId(id);
+        setName(name);
+        setAcronym(acronym);
+        setActive(active);
+        setMax_users(max_users);
+        setUsers_count(users_count);
+        setOwner(owner);
+        setPredictions(predictions);
+        setDisciplines(disciplines);
     }
 
     public long getId() {
@@ -120,12 +121,12 @@ public class League {
         this.predictions = predictions;
     }
 
-    public Discipline getDiscipline() {
-        return discipline;
+    public Set<Discipline> getDisciplines() {
+        return disciplines;
     }
 
-    public void setDiscipline(Discipline discipline) {
-        this.discipline = discipline;
+    public void setDisciplines(Set<Discipline> disciplines) {
+        this.disciplines = disciplines;
     }
 
     @Override
@@ -138,7 +139,7 @@ public class League {
                 ", max_users=" + getMax_users() +
                 ", users_count=" + getUsers_count() +
                 ", owner=" + getOwner().getUsername() +
-                ", discipline=" + getDiscipline().getName() +
+                ", disciplines=" + getDisciplines().toString() +
                 '}';
     }
 }

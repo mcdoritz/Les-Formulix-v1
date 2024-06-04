@@ -1,20 +1,17 @@
 package fr.lesformulix.models;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Size;
 
 import java.util.Date;
 import java.util.Set;
 
 @Entity
 @Table(name="drivers")
-public class Driver {
+public class Driver extends Person{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(nullable=false)
-    private String firstname;
-    @Column(nullable=false)
-    private String lastname;
 
     @Column(nullable=false, columnDefinition = "boolean default false")
     private Boolean driving;
@@ -22,7 +19,7 @@ public class Driver {
     private byte seasons;
     @Column(nullable=false)
     private Date birthdate;
-    @Column(nullable=false, columnDefinition = "text")
+    @Column(columnDefinition = "text")
     private String notes;
 
     private Date end_of_contract;
@@ -45,23 +42,26 @@ public class Driver {
     @OneToMany(mappedBy="driver")
     private Set<Pet> pets;
 
+    @Size(max=255)
+    private String nicknames;
+
     public Driver(){
     }
 
-    public Driver(Long id, String firstname, String lastname, Boolean driving, byte seasons, Date birthdate, String notes, Date end_of_contract, Set<Track> tracks, Team team, Location birthplace, Country nationality, Set<Pet> pets) {
-        this.id = id;
-        this.firstname = firstname;
-        this.lastname = lastname;
-        this.driving = driving;
-        this.seasons = seasons;
-        this.birthdate = birthdate;
-        this.notes = notes;
-        this.end_of_contract = end_of_contract;
-        this.tracks = tracks;
-        this.team = team;
-        this.birthplace = birthplace;
-        this.nationality = nationality;
-        this.pets = pets;
+    public Driver(Long id, String firstname, String lastname, Boolean driving, byte seasons, Date birthdate, String notes, Date end_of_contract, Set<Track> tracks, Team team, Location birthplace, Country nationality, Set<Pet> pets, String nicknames) {
+        super(firstname, lastname);
+        setId(id);
+        setDriving(driving);
+        setSeasons(seasons);
+        setBirthdate(birthdate);
+        setNotes(notes);
+        setEnd_of_contract(end_of_contract);
+        setTracks(tracks);
+        setTeam(team);
+        setBirthplace(birthplace);
+        setNationality(nationality);
+        setPets(pets);
+        setNicknames(nicknames);
     }
 
     public Long getId() {
@@ -70,22 +70,6 @@ public class Driver {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public String getFirstname() {
-        return firstname;
-    }
-
-    public void setFirstname(String firstname) {
-        this.firstname = firstname;
-    }
-
-    public String getLastname() {
-        return lastname;
-    }
-
-    public void setLastname(String lastname) {
-        this.lastname = lastname;
     }
 
     public Boolean getDriving() {
@@ -168,12 +152,20 @@ public class Driver {
         this.pets = pets;
     }
 
+    public String getNicknames() {
+        return nicknames;
+    }
+
+    public void setNicknames(String nicknames) {
+        this.nicknames = nicknames;
+    }
+
     @Override
     public String toString() {
         return "Driver{" +
                 "id=" + id +
-                ", firstname='" + firstname + '\'' +
-                ", lastname='" + lastname + '\'' +
+                ", firstname='" + super.getFirstname() + '\'' +
+                ", lastname='" + super.getLastname() + '\'' +
                 ", driving=" + driving +
                 ", seasons=" + seasons +
                 ", birthdate=" + birthdate +

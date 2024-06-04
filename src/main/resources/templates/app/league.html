@@ -2,32 +2,45 @@
 <html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="app/layout/layout">
 
 <main layout:fragment="page" class="main-content flex-1 overflow-auto">
-    <section id = "select-league" class="app-component">
-        <h1 class="section-title">Leagues</h1>
-        <p class="section-subtitle">Where you are IN IN IN IN IN IN IN</p>
-        <table class="leagues-list">
-            <tr>
-                <th class="font-bold uppercase text-left">[SPORT]</th>
-                <th class="text-left">LEAGUE</th>
-                <th class="text-left">D-DAY IN</th>
-            </tr>
-            <tr th:each="league : ${leaguesOfUser}" th:attr="onclick='window.location.href=\'league/' + ${league.id} + '\''">
-
-                <td th:text="'[ '+${league.discipline.name}+' ]'" class="font-bold uppercase"></td>
-                <td th:text="${league.name}"></td>
-                <td class="">
-                    <div class="light bg-red-500 col-span-1"></div>
-                    <div class="light bg-red-500"></div>
-                    <div class="light bg-red-500"></div>
-                    <div class="light bg-red-500"></div>
-                    <div class="light bg-slate-700"></div>
-                </td>
-            </tr>
-        </table>
-
+    <section id="news" class="app-component">
+        <h1 th:text="${league.name}"></h1>
+        <h2 class="section-title">News</h2>
+        <article>
+            <a href="#"><span class="font-bold uppercase">[BACAF - F1@Japan]</span> Aubert une nouvelle fois la risée !</a>
+            <div id="ns1" class="h-1/4 aspect-square rounded-full bg-purple-500"></div>
+        </article>
+        <article>
+            <a href="#"><span class="font-bold uppercase">[BACAF - F1@Japan]</span> Aubert une nouvelle fois la risée !</a>
+            <div id="ns2" class="h-1/4 aspect-square rounded-full bg-purple-500"></div>
+        </article>
+        <article>
+            <a href="#" class="text-justify pr-4">
+                <span class="font-bold uppercase">[BACAF - NASCAR@Richmond]</span> Qlex une nouvelle fois la risée ! Dorizon vainqueur !
+            </a>
+            <div id="ns3" class="h-1/4 aspect-square rounded-full bg-stone-500"></div>
+        </article>
+        <article><a href="#" class="text-center">All the news</a></article>
     </section>
-    <section th:if="${league != null}" id="leagueInfoContainer">
-        <div th:text="${league.name}"></div>
+    <section id="last-results" class="app-component">
+        <h2 class="section-title">Last Race Results</h2>
+        <article>
+            <h3 class="dashboard-race-title">
+                GP du Japon
+                <img class="dashboard-race-flag" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Flag_of_Japan.svg/1280px-Flag_of_Japan.svg.png" alt="JAPAN_FLAG">
+            </h3>
+            <h4 class="dashboard-league-title">League Bac à Fumier</h4>
+            <p class="sport">Formule 1</p>
+        </article>
     </section>
-    <script src="js/app/league/jQueryLeague.js"></script>
+    <section id="next-gp" class="app-component">
+        <h2 class="section-title">Next Race</h2>
+        <article>
+            <h3 class="dashboard-race-title">
+                GP de Chine
+                <img class="dashboard-race-flag" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Flag_of_the_People%27s_Republic_of_China.svg/800px-Flag_of_the_People%27s_Republic_of_China.svg.png" alt="CHINA_FLAG">
+            </h3>
+            <h4 class="dashboard-league-title">League Bac à Fumier</h4>
+            <p class="sport">Formule 1</p>
+        </article>
+    </section>
 </main>

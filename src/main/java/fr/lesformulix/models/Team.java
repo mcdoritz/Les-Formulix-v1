@@ -17,6 +17,9 @@ public class Team {
     private String name;
 
     @Column(nullable = false)
+    private String shortname;
+
+    @Column(nullable = false)
     private Date creation_date;
 
     @Column(columnDefinition = "tinyint default 0")
@@ -31,13 +34,14 @@ public class Team {
     public Team(){
     }
 
-    public Team(long id, String name, Date creation_date, byte titles, Set<Driver> drivers, Set<TeamMember> teamMembers) {
-        this.id = id;
-        this.name = name;
-        this.creation_date = creation_date;
-        this.titles = titles;
-        this.drivers = drivers;
-        this.teamMembers = teamMembers;
+    public Team(long id, String name, String shortname, Date creation_date, byte titles, Set<Driver> drivers, Set<TeamMember> teamMembers) {
+        setId(id);
+        setName(name);
+        setShortname(shortname);
+        setCreation_date(creation_date);
+        setTitles(titles);
+        setDrivers(drivers);
+        setTeamMembers(teamMembers);
     }
 
     public long getId() {
@@ -54,6 +58,14 @@ public class Team {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getShortname() {
+        return shortname;
+    }
+
+    public void setShortname(String shortname) {
+        this.shortname = shortname;
     }
 
     public Date getCreation_date() {

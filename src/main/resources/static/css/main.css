@@ -23,6 +23,7 @@ table{
     border-bottom-right-radius: 15px;
     margin-left:1em;
     margin-right:1em;
+    width: 100%;
 }
 
 td, th{
@@ -34,7 +35,7 @@ td, th{
 
 td{
     font-size: 1.75em;
-    height:3em;
+    height:6em;
     border-top:2px solid var(--white50);
 }
 

@@ -16,16 +16,16 @@ public class Discipline {
     @Column(nullable=false)
     private String name;
 
-    @OneToMany(mappedBy="discipline")
-    private Set<League> leagues;
+    @ManyToMany
+    private Set<Driver> drivers;
 
     public Discipline() {
     }
 
-    public Discipline(long id, String name, Set<League> leagues) {
-        this.id = id;
-        this.name = name;
-        this.leagues = leagues;
+    public Discipline(long id, String name, Set<Driver> drivers) {
+        setId(id);
+        setName(name);
+        setDrivers(drivers);
     }
 
     public long getId() {
@@ -44,12 +44,12 @@ public class Discipline {
         this.name = name;
     }
 
-    public Set<League> getLeagues() {
-        return leagues;
+    public Set<Driver> getDrivers() {
+        return drivers;
     }
 
-    public void setLeagues(Set<League> leagues) {
-        this.leagues = leagues;
+    public void setDrivers(Set<Driver> drivers) {
+        this.drivers = drivers;
     }
 
     @Override
@@ -57,7 +57,6 @@ public class Discipline {
         return "Discipline{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", leagues=" + leagues +
                 '}';
     }
 }

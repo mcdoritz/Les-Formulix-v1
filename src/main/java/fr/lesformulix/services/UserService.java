@@ -59,6 +59,14 @@ public class UserService {
         return list;
     }
 
+    public User getById(int id) {
+        return repo.findById(id).orElse(null);
+    }
+
+    public User getByUsername(String username) {
+        return repo.findByUsername(username);
+    }
+
     // UPDATE ----------------------------------------------------------------------------------------------
 
     // DELETE ----------------------------------------------------------------------------------------------
