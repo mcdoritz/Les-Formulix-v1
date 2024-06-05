@@ -12,8 +12,8 @@ public class Parameters {
     /*
 	private static String admin = "mcdoritz";
 	private static String adminpw = "corvette$72";*/
-    private static final String name = "mas";
-    public static String url = "jdbc:mysql://localhost:3306/"+ name +"?useUnicode=yes&characterEncoding=UTF-8";
+    private static final String name = "lesFormulixV1";
+    public static String url = "jdbc:mysql://awseb-e-vygctkpbbb-stack-awsebrdsdatabase-bzacb5oys3rj.che884y0q5jz.eu-west-3.rds.amazonaws.com:3306/"+ name +"?useUnicode=yes&characterEncoding=UTF-8";
 
     public static String admin = !deploy ? "root" : "mcdoritz";
     public static String adminpw = !deploy ? "" : "Corvette$72#19";
