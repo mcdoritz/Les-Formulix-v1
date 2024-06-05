@@ -175,3 +175,11 @@ tr{
 
 /* ------------------------------------------------------------------------ */
 /* ------------------------------------------------------------------------ */
+
+/* Styles pour les ordinateurs */
+@media screen and (min-device-width: 493px) {
+    .border-red-500 {
+        --tw-border-opacity: 1;
+        border-color: rgb(255 255 255 / var(--tw-border-opacity));
+    }
+}
