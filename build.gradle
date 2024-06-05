@@ -39,5 +39,14 @@ bootRun {
     systemProperties = System.properties
 }
 
+bootRun {
+    doFirst {
+        // Ensure that the directory for the PID file exists
+        new File("/var/pids/").mkdirs()
+        // Create the PID file
+        new File("/var/pids/web.pid").createNewFile()
+    }
+}
+
 
 
