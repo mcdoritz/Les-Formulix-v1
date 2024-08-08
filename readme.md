@@ -40,3 +40,6 @@ Tentative de CI/CD avec Github Actions et AWS CodePipeline
 ## Avancées au 5/6/24:
 Déploiement avec un fichier war importé, OK
 Echec déploiement via pipeline github actions
+
+## Avancées au 8/8/24:
+Mise à jour Gradle
